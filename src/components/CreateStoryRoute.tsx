@@ -13,13 +13,14 @@ const CreateStoryRoute = () => {
   const [number, setNumber] = useState("");
   const [tagline, setTagline] = useState("");
 
-  const { stories } = useContext(StoriesContext);
+  const { addStory } = useContext(StoriesContext);
 
   const navigate = useNavigate();
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = (e: FormEvent): void => {
     e.preventDefault();
-    const createdStory: Story = {
+
+    addStory({
       author: author,
       word1: place,
       word2: person,
@@ -27,8 +28,7 @@ const CreateStoryRoute = () => {
       word4: occupation,
       word5: number,
       word6: tagline,
-    };
-    stories.push(createdStory);
+    });
     navigate("/stories");
   };
   return (

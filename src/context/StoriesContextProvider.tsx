@@ -29,8 +29,14 @@ const StoriesContextProvider = ({ children }: Props) => {
       word6: "families first",
     },
   ]);
+
+  let nextId: number = 3;
+
   const addStory = (story: Story): void => {
-    setStories((prev) => [...prev, story]);
+    setStories((prev) => {
+      story.id = nextId++;
+      return [...prev, story];
+    });
   };
 
   return (

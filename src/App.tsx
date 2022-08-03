@@ -12,6 +12,7 @@ import HomeRoute from "./components/HomeRoute";
 import ListStoriesRoute from "./components/ListStoriesRoute";
 import ViewStoryRoute from "./components/ViewStoryRoute";
 import CreateStoryRoute from "./components/CreateStoryRoute";
+import FourOhFour from "./components/FourOhFour";
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
           <Route path="/stories" element={<ListStoriesRoute />} />
           <Route path="/stories/:id" element={<ViewStoryRoute />} />
           <Route path="/create-story" element={<CreateStoryRoute />} />
-          <Route path="*" element={<Navigate to="/" />} />
+          <Route path="*" element={<FourOhFour />} />
         </Routes>
       </Router>
     </div>
